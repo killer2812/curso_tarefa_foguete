@@ -8,3 +8,12 @@ var todos = [
 "joga lixo no lixo"
 
 ];
+
+function renderTodos(){
+for(todo of todos){
+    console.log(todo);
+
+    }
+}
+
+renderTodos();
