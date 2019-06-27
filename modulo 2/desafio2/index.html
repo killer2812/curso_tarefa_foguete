@@ -10,7 +10,7 @@
 
 <body>
 
-    
+
 
     <button id="butao">new button</button>
 
@@ -25,10 +25,23 @@
             skait.style.width = '100px';
             skait.style.height = '100px';
             skait.style.backgroundColor = '#F00';
+            skait.onmouseover = function(){
+                skait.style.backgroundColor = getRandomColor();
+            }
             btvermElement.appendChild(skait)
         }
 
+        function getRandomColor() {
+            var letters = "0123456789ABCDEF";
+            var color = "#";
+            for (var i = 0; i < 6; i++) {
+                color += letters[Math.floor(Math.random() * 16)];
+            }
+            return color;
 
+     
+        }
+        var newColor = getRandomColor(); 
 
 
 
