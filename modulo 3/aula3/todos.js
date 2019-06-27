@@ -11,7 +11,11 @@ var todos = [
 
 function renderTodos(){
 for(todo of todos){
-    console.log(todo);
+   var todoElement = document.createElement('li');
+   var todotext = document.createTextNode(todo)
+
+   todoElement.appendChild(todotext);
+   listElement.appendChild(todoElement)
 
     }
 }
