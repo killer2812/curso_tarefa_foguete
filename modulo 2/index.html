@@ -1,34 +1,41 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>ata</title>
 </head>
+
 <body>
-   <div id="app">
-    <div class="verm"></div>
 
-<button onclick="botao()">new button</button>
+    
 
-<script>
-var btverm = document.querySelector('.app');
-var verm = document.querySelector('.verm')
+    <button id="butao">new button</button>
 
-btverm.onclick = function(){
-    verm.style.width = 100;
-    verm.style.height = 100;
-    verm.style.backgroundColor = '#f00';
-}
+    <div id="verm"></div>
 
+    <script>
+        var btvermElement = document.getElementById('butao');
+        var vermElement = document.querySelector('verm')
 
-
-
-
-</script>
+        btvermElement.onclick = function () {
+            var skait = document.createElement('div');
+            skait.style.width = '100px';
+            skait.style.height = '100px';
+            skait.style.backgroundColor = '#F00';
+            btvermElement.appendChild(skait)
+        }
 
 
-   </div>
+
+
+
+    </script>
+
+
+    </div>
 </body>
+
 </html>
