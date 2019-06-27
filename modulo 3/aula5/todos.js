@@ -3,9 +3,9 @@ var inputElement = document.querySelector("#app input");
 var buttonElement = document.querySelector("#app button")
 
 var todos = [
-"fazer café",
-"beber gasolina",
-"joga lixo no lixo"
+'fazer café',
+'beber gasolina',
+'joga lixo no lixo'
 
 ];
 
@@ -15,31 +15,39 @@ function renderTodos(){
 for(todo of todos){
    var todoElement = document.createElement('li');
    var todoText = document.createTextNode(todo)
-   var linkElement = document.createElement('a')
+   var linkElement = document.createElement('a');
+   linkElement.setAttribute('href', '#');
+  
+   var pos = todos.indexOf(todo);
+   linkElement.setAttribute('onclick','deleteTodo('+ pos +')' );
 
-   var linkText = document.createTextNode('excluir')
+   
+   var linkText = document.createTextNode('Excluir')
+  
    linkElement.appendChild(linkText)
-   linkElement.setAttribute('href', '#')
-
     todoElement.appendChild(todoText);
     todoElement.appendChild(linkElement);
    listElement.appendChild(todoElement)
 
     }
+    
 }
 renderTodos();
 
 
 function addTodo(){
     var todoText = inputElement.value;
+
     todos.push(todoText)
-    inputElement.value = ' ';
+    inputElement.value = '';
     renderTodos();
 }
 
-buttonElement.onclick = addTodo
+buttonElement.onclick = addTodo;
+
+
 function deleteTodo(pos) {
-todos.splice(pos, 1)
+todos.splice(pos, 1);
 renderTodos();
 
 }
