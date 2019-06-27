@@ -12,18 +12,21 @@ var todos = [
 function renderTodos(){
 for(todo of todos){
    var todoElement = document.createElement('li');
-   var todotext = document.createTextNode(todo)
+   var todoText = document.createTextNode(todo)
 
-   todoElement.appendChild(todotext);
+   todoElement.appendChild(todoText);
    listElement.appendChild(todoElement)
 
     }
 }
-
+renderTodos();
 
 
 function addTodo(){
-    var todotext = inputElement.Value;
-    inputElement.value = ' ';
+    var todoText = inputElement.Value;
+    todos.push(todoText)
+    inputElement.value = '';
     renderTodos();
 }
+
+buttonElement.onclick = addTodo
